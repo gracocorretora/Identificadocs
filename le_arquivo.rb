@@ -23,22 +23,19 @@ class Planilha
     return coord_titulo,coord_dados
   end
 
-  def converte_hash (coord_titulo,coord_dados,tipo = false)
+  def converte_hash (coord_titulo,coord_dados,array = true)
      hash = Hash.new
     @worksheet.each do |row|
      titulo = row[coord_titulo]
      dado = row[coord_dados]
-     case tipo
-     when tipo == 'array'
+     if array == true
        if hash[titulo].class == NilClass
          hash[titulo] = []
          hash[titulo] << dado
        else
          hash[titulo] << dado
        end
-     when tipo == 'soma'
-       hash[titulo] += dado
-     when tipo == false
+     else
        hash[titulo] = dado
      end
     end

@@ -82,11 +82,6 @@ end
 
 def posicao_ou_turismo
   puts "O tipo de comparação que você deseja é da posição própria ou do turismo?"
-  puts "1 - Posição  2 - Turismo"
-  turismo = gets.strip.to_i
-  if turismo == 2
-    return true
-  else
-    return false
-  end
+  tipo = gets.strip
+  return tipo  
 end
