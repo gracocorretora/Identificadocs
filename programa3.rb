@@ -4,7 +4,7 @@ require_relative 'le_arquivo'
 def executa_3(planilha_docs)
 
   arquivo1 = menu3
-  #tipo = posicao_ou_turismo
+  turismo = posicao_ou_turismo
   puts "Abrindo .xls inicial" ; planilha_docs.abre_xls
   puts "Abrindo WorkSheet" ; planilha_docs.abre_worksheet(0)
   puts "Pegando os documentos e agrupando por CPF/CNPJ" ; reg_e_docs = planilha_docs.converte_hash(2,1)
@@ -34,7 +34,6 @@ def executa_3(planilha_docs)
 
   puts "Adicionando Valores a Planilha de Saida"
   adiciona_valor_planilha_saida dados_reg,sheet_final,reg_e_docs
-
 
   nome_arquivo_saida = pede_nome_arquivo_saida
   planilha_saida.write "#{nome_arquivo_saida}.xls" ; puts "Arquivo #{nome_arquivo_saida}.xls salvo com sucesso"
